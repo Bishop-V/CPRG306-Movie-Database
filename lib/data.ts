@@ -1,4 +1,4 @@
-import type { Movie } from "./types";
+import type { Movie } from "@/types/movie";
 import { createClient } from "@/utils/supabase/server";
 
 export async function getMovies(): Promise<Movie[]> {
