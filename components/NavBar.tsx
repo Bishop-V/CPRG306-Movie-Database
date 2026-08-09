@@ -12,15 +12,15 @@ export default function Navbar() {
   const pathname = usePathname();
   console.log("Pathname", pathname);
   return (
-    <nav className="bg-purple-50 border-b border-gray-200 px-6 py-4 w-full">
+    <nav className="bg-gray-800 border-b border-gray-500 px-6 py-4 w-full">
       <div className="flex lg:flex-row flex-col lg:justify-between">
         <div className="lg:flex-1 w-full">
           <Link
             key="/"
             href="/"
-            className="text-4xl font-bold text-black text-start"
+            className="text-4xl font-bold text-purple-200 text-start"
           >
-            Movies110
+            Internet Movies Rental Company
           </Link>
         </div>
         <Link
