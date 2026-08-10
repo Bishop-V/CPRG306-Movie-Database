@@ -1,19 +1,36 @@
 //This is the generic layour for each movie card that can be mapped to with the dataset
 import { Movie } from "@/types/movie";
+import Link from "next/link";
 
 type MovieCardProps = {
   movie: Movie;
+  isLoggedIn?: boolean;
 };
 
-export default function MovieCard({ movie }: MovieCardProps) {
+export default function MovieCard({
+  movie,
+  isLoggedIn = false,
+}: MovieCardProps) {
+  const buttonStyle =
+    "inline-flex bg-purple-400 cursor-pointer rounded-lg text-purple-100 w-20 justify-center";
+
   return (
-    <div className="bg-purple-400 rounded-md p-4">
-      <h2 className="text-xl text-purple-50">{movie.title}</h2>
-      <p className="text-purple-50">Released: {movie.release_year}</p>
+    <div className="bg-gray-700 rounded-md p-4 flex flex-col">
+      <h2 className="text-xl text-purple-200">{movie.title}</h2>
+      <p className="text-purple-100">Released: {movie.release_year}</p>
 
       <p className="italic text-purple-100">
         Featuring: {movie.actors.join(", ")}
       </p>
+
+      {isLoggedIn && (
+        <div className="gap-2 flex mt-auto pt-3 ">
+          <Link href="/" className={buttonStyle}>
+            Edit
+          </Link>
+          <button className={buttonStyle}>Delete</button>
+        </div>
+      )}
     </div>
   );
 }

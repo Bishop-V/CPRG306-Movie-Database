@@ -1,9 +1,13 @@
-import Image from "next/image";
 import { getMovies } from "@/lib/data";
 import MovieCard from "@/components/MovieCard";
+import { createClient } from "@/utils/supabase/server";
 
 export default async function Home() {
+  const supabase = await createClient();
   const movies = await getMovies();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
   return (
     <main className="m-4 mt-5">
@@ -18,7 +22,7 @@ export default async function Home() {
 
       <div className="grid grid-cols-3 gap-4 mx-auto my-4">
         {movies.map((movie) => (
-          <MovieCard movie={movie} />
+          <MovieCard key={movie.title} movie={movie} isLoggedIn={!!user} />
         ))}
       </div>
     </main>
