@@ -1,4 +1,5 @@
 //This is the generic layour for each movie card that can be mapped to with the dataset
+import { deleteMovie } from "@/lib/actions";
 import { Movie } from "@/types/movie";
 import Link from "next/link";
 
@@ -28,7 +29,11 @@ export default function MovieCard({
           <Link href="/" className={buttonStyle}>
             Edit
           </Link>
-          <button className={buttonStyle}>Delete</button>
+          <form action={deleteMovie.bind(null, movie.title)}>
+            <button className={buttonStyle} type="submit">
+              Delete
+            </button>
+          </form>
         </div>
       )}
     </div>
