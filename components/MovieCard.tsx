@@ -1,3 +1,4 @@
+//This is the generic layour for each movie card that can be mapped to with the dataset
 import { Movie } from "@/types/movie";
 
 type MovieCardProps = {
