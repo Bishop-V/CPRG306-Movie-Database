@@ -52,9 +52,9 @@ export default function Navbar() {
         <div className="flex flex-row items-center gap-6 self-end lg:self-auto">
           {isLoggedIn && (
             <Link
-              href="/movies/new"
+              href="/new"
               className={
-                pathname === "/movies/new"
+                pathname === "/new"
                   ? `${linkClasses} font-bold text-purple-400`
                   : linkClasses
               }
