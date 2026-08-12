@@ -15,6 +15,7 @@ function validateMovie(formData: FormData) {
   const title = String(formData.get("title") ?? "").trim();
   const actorsInput = String(formData.get("actors") ?? "").trim();
   const releaseYear = Number(String(formData.get("release_year") ?? "").trim());
+  const imageURI =String(formData.get("imageURI") ?? "").trim();
   if (!title) return { error: "Title is required." };
   if (title.length > 50)
     return { error: "Title must be 50 characters or fewer." };
@@ -25,7 +26,11 @@ function validateMovie(formData: FormData) {
     .map((a) => a.trim())
     .filter(Boolean);
   if (actors.length === 0) return { error: "Enter at least one actor." };
-  return { data: { title, release_year: releaseYear, actors } };
+  if(!imageURI.includes("film-poster") || !imageURI.includes("ltrbxd")){
+    return {error: "Please link to a letterboxd poster.\n Example https://a.ltrbxd.com/resized/film-poster/1/4/1/8/6/6/141866-fateful-findings-0-1000-0-1500-crop.jpg?v=e6a020c8e1" };
+  } 
+
+  return { data: { title, release_year: releaseYear, actors, imageURI } };
 }
 //Add/Edit movie.
 export async function saveMovie(

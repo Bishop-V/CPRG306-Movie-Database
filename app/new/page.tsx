@@ -8,6 +8,7 @@ export default function MovieForm() {
   const [title, setTitle] = useState("");
   const [year, setYear] = useState("");
   const [actors, setActors] = useState("");
+  const [imageURI, setImageURI] = useState("");
   const inputStyle =
     "border-2 border-purple-200 rounded-2xl placeholder:text-gray-400 text-center";
 
@@ -38,6 +39,16 @@ export default function MovieForm() {
           onChange = {(e)=> setActors(e.target.value)}
           name="actors" 
           placeholder=" Actors" />
+
+          {state.error && (
+            <p className="text-red-300 text-center">{state.error}</p>
+          )}
+
+          <input className={inputStyle} 
+          value={imageURI}
+          onChange = {(e)=> setImageURI(e.target.value)}
+          name="imageURI" 
+          placeholder="Letterboxd poster link or Blank" />
 
           {state.error && (
             <p className="text-red-300 text-center">{state.error}</p>
