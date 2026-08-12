@@ -16,7 +16,9 @@ export default function MovieForm() {
       <div className="bg-gray-700 rounded-lg p-8 w-[90%] max-w-md flex flex-col items-center">
         <h2 className="text-purple-400 text-3xl font-bold">Add a movie</h2>
 
-        <form action={formAction} className="mt-7 gap-6 flex flex-col">
+        <form action={formAction}
+        
+         className="mt-7 gap-6 flex flex-col">
           <input className={inputStyle} 
           value = {title}
           onChange = {(e)=> setTitle(e.target.value)}
