@@ -1,3 +1,5 @@
+//Generic page created to show NavBar functionality. This page is only reachable through the NavBar.
+
 export default function AboutPage() {
   return (
     <div>

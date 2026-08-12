@@ -1,3 +1,7 @@
+//Page for the creation of new movies.
+//Movies created by the user on this page will be saved to the database via the saveMovie function imported from actions.ts.
+// Validation of entered inputs is handled within saveMovie.
+
 "use client";
 
 import { useActionState, useState } from "react";
@@ -17,38 +21,42 @@ export default function MovieForm() {
       <div className="bg-gray-700 rounded-lg p-8 w-[90%] max-w-md flex flex-col items-center">
         <h2 className="text-purple-400 text-3xl font-bold">Add a movie</h2>
 
-        <form action={formAction}
-        
-         className="mt-7 gap-6 flex flex-col">
-          <input className={inputStyle} 
-          value = {title}
-          onChange = {(e)=> setTitle(e.target.value)}
-          name="title" 
-          placeholder=" Title" />
+        <form action={formAction} className="mt-7 gap-6 flex flex-col">
+          <input
+            className={inputStyle}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            name="title"
+            placeholder=" Title"
+          />
 
           <input
             className={inputStyle}
             value={year}
-            onChange ={(e)=> setYear(e.target.value)}
+            onChange={(e) => setYear(e.target.value)}
             name="release_year"
             placeholder=" Year"
           />
 
-          <input className={inputStyle} 
-          value={actors}
-          onChange = {(e)=> setActors(e.target.value)}
-          name="actors" 
-          placeholder=" Actors" />
+          <input
+            className={inputStyle}
+            value={actors}
+            onChange={(e) => setActors(e.target.value)}
+            name="actors"
+            placeholder=" Actors"
+          />
 
           {state.error && (
             <p className="text-red-300 text-center">{state.error}</p>
           )}
 
-          <input className={inputStyle} 
-          value={imageURI}
-          onChange = {(e)=> setImageURI(e.target.value)}
-          name="imageURI" 
-          placeholder="Letterboxd poster link or Blank" />
+          <input
+            className={inputStyle}
+            value={imageURI}
+            onChange={(e) => setImageURI(e.target.value)}
+            name="imageURI"
+            placeholder="Letterboxd poster link or Blank"
+          />
 
           {state.error && (
             <p className="text-red-300 text-center">{state.error}</p>

@@ -1,3 +1,6 @@
+//Registration page for new users. Accepts an email and password.
+//Registration is handled via Supabase.
+//Does not require email verification as it is turned off in Supabase.
 "use client";
 
 import { useRouter } from "next/navigation";

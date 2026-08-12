@@ -1,3 +1,7 @@
+//Server side functions to retrieve data from movie table on Supabase.
+//getMovies returns all rows.
+//getMovieByTitle fetches a single row using a title input, and returns a null if it does not exist.
+
 import type { Movie } from "@/types/movie";
 import { createClient } from "@/utils/supabase/server";
 
