@@ -5,9 +5,9 @@ import { saveMovie } from "@/lib/actions";
 
 export default function MovieForm() {
   const [state, formAction] = useActionState(saveMovie.bind(null, null), {});
-  const {title, setTitle} = useState("");
-  const {year, setYear} = useState("");
-  const {actors, setActors} = useState("");
+  const [title, setTitle] = useState("");
+  const [year, setYear] = useState("");
+  const [actors, setActors] = useState("");
   const inputStyle =
     "border-2 border-purple-200 rounded-2xl placeholder:text-gray-400 text-center";
 
