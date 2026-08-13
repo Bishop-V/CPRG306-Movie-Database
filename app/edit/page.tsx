@@ -37,6 +37,6 @@ export default async function EditMoviePage({
   loadTitle = {movie.title}
   loadActors = {movie.actors}
   loadYear = {movie.release_year}
-  loadImageURL = {movie.imageURL}
+  loadImageURL = {movie.imageURI}
   />;
 }

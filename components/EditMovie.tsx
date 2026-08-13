@@ -13,7 +13,7 @@ type EditMovieFormProps = {
 export default function EditMovieForm({ loadTitle, loadActors, loadYear, loadImageURL }: EditMovieFormProps) {
   
 
-  const [state, formAction] = useActionState(saveMovie.bind(null, null), {});
+  const [state, formAction] = useActionState(saveMovie.bind(null, loadTitle), {});
   const [title, setTitle] = useState(loadTitle);
   const [year, setYear] = useState(String(loadYear));
   const [actors, setActors] = useState(loadActors);
@@ -26,7 +26,7 @@ export default function EditMovieForm({ loadTitle, loadActors, loadYear, loadIma
     
     <main className="w-full min-h-screen flex items-center justify-center">
       <div className="bg-gray-700 rounded-lg p-8 w-[90%] max-w-md flex flex-col items-center">
-        <h2 className="text-purple-400 text-3xl font-bold">Add a movie</h2>
+        <h2 className="text-purple-400 text-3xl font-bold">Edit a movie</h2>
 
         <form action={formAction}
         
