@@ -1,4 +1,4 @@
-//This is the generic layour for each movie card that can be mapped to with the dataset
+//This is the generic layer for each movie card that can be mapped to with the dataset
 import { deleteMovie } from "@/lib/actions";
 import { Movie } from "@/types/movie";
 import Link from "next/link";
@@ -14,7 +14,7 @@ export default function MovieCard({
   isLoggedIn = false,
 }: MovieCardProps) {
   const buttonStyle =
-    "inline-flex bg-purple-400 cursor-pointer rounded-lg text-purple-100 w-60 justify-center";
+    "inline-flex bg-purple-400 cursor-pointer rounded-lg text-purple-100 lg:w-40 w-20  justify-center";
 
   return (
     
@@ -29,9 +29,17 @@ export default function MovieCard({
         {/*edit and delete buttons for logged in users*/}
         {isLoggedIn && (
           <div className="gap-2 flex mt-auto pt-3 ">
-            <Link href="/" className={buttonStyle}>
-              Edit
-            </Link>
+            <Link
+              href={{
+                pathname: "/edit",
+                query: {
+                  id: movie.title,
+                },
+              }}
+              className={buttonStyle}
+            >
+        Edit
+      </Link>
             <form action={deleteMovie.bind(null, movie.title)}>
               <button className={buttonStyle} type="submit">
                 Delete

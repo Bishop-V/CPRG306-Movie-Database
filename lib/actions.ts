@@ -26,13 +26,22 @@ function validateMovie(formData: FormData) {
     .map((a) => a.trim())
     .filter(Boolean);
   if (actors.length === 0) return { error: "Enter at least one actor." };
-  if(!imageURI.includes("film-poster") || !imageURI.includes("ltrbxd")){
-    return {error: "Please link to a letterboxd poster.\n Example https://a.ltrbxd.com/resized/film-poster/1/4/1/8/6/6/141866-fateful-findings-0-1000-0-1500-crop.jpg?v=e6a020c8e1" };
-  } 
+  if (
+  imageURI !== "" &&
+  (
+    !imageURI.includes("film-poster") ||
+    !imageURI.includes("ltrbxd")
+  )
+) {
+  return {
+    error:
+      "Please link to a Letterboxd poster.\nExample https://a.ltrbxd.com/resized/film-poster/1/4/1/8/6/6/141866-fateful-findings-0-1000-0-1500-crop.jpg?v=e6a020c8e1",
+  };
+}
 
   return { data: { title, release_year: releaseYear, actors, imageURI } };
 }
-//Add/Edit movie.
+//Add/edit movie.
 export async function saveMovie(
   ogTitle: string | null,
   _prevState: MovieFormState,
@@ -45,6 +54,7 @@ export async function saveMovie(
   if (!user) return { error: "You must be logged in." };
   const result = validateMovie(formData);
   if (!result.data) return { error: result.error };
+  //if ogTitle is null, no movie with that name exists. Add the movie. Otherwise, update where ogTitle
   const { error } = ogTitle
     ? await supabase.from("movie").update(result.data).eq("title", ogTitle)
     : await supabase.from("movie").insert(result.data);
@@ -52,3 +62,4 @@ export async function saveMovie(
   revalidatePath("/");
   redirect("/");
 }
+
