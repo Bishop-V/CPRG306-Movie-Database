@@ -32,11 +32,12 @@ export default async function EditMoviePage({
       if(error) {
           console.error(error);
       }
-
+      
+      const imageURI = movie.imageURI ?? "";
   return <EditMovieForm 
   loadTitle = {movie.title}
   loadActors = {movie.actors}
   loadYear = {movie.release_year}
-  loadImageURL = {movie.imageURI}
+  loadImageURL = {imageURI}
   />;
 }

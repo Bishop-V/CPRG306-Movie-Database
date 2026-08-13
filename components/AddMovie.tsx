@@ -12,7 +12,7 @@ export default function AddMovieForm() {
   const [actors, setActors] = useState("");
   const [imageURI, setImageURI] = useState("");
   const inputStyle =
-    "border-2 border-purple-200 rounded-2xl placeholder:text-gray-400 text-center";
+    "border-2 border-purple-200 rounded-2xl text-gray-400 text-center w-100";
 
   return (
     <main className="w-full min-h-screen flex items-center justify-center">

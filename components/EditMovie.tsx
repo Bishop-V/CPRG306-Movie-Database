@@ -19,7 +19,7 @@ export default function EditMovieForm({ loadTitle, loadActors, loadYear, loadIma
   const [actors, setActors] = useState(loadActors);
   const [imageURI, setImageURI] = useState(loadImageURL);
   const inputStyle =
-    "border-2 border-purple-200 rounded-2xl placeholder:text-gray-400 text-center";
+    "border-2 border-purple-200 rounded-2xl text-gray-400 text-center w-100";
 
   return (
 
