@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-//This is the generic layer for each movie card that can be mapped to with the dataset
-=======
-//This is the generic layout for each movie card that can be mapped to with the dataset on Supabase.
-//The function takes an input of a movie as well as a boolean to tell it whether the user is logged in.
-//If the user is logged in, the card will be rendered with an edit and delete button to modify the particular movie.
->>>>>>> e028fa9 (minor comment additions)
+//This is the generic layer for each movie card that can be mapped to with the dataset.
+//
 import { deleteMovie } from "@/lib/actions";
 import { Movie } from "@/types/movie";
 import Link from "next/link";
@@ -43,8 +38,8 @@ export default function MovieCard({
               }}
               className={buttonStyle}
             >
-        Edit
-      </Link>
+              Edit
+            </Link>
             <form action={deleteMovie.bind(null, movie.title)}>
               <button className={buttonStyle} type="submit">
                 Delete
