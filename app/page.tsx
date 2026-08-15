@@ -1,3 +1,7 @@
+// Front page for the website. Uses getMovies to get an array of Movie objects from Supabase.
+// The array is fed into a grid that maps to MovieCard, which renders the passed data into individual cards.
+// MovieCard is also passed a boolean that indicates whether a user is logged in.
+
 import { getMovies } from "@/lib/data";
 import MovieCard from "@/components/MovieCard";
 import { createClient } from "@/utils/supabase/server";
