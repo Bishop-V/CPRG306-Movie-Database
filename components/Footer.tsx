@@ -1,7 +1,7 @@
 // ============================================================================
 // components/Footer.tsx   →   the bar across the bottom of every page
 // ============================================================================
-// Company details and trademark
+// Company details and trademark, as well as contact information.
 // ----------------------------------------------------------------------------
 
 export default function Footer() {

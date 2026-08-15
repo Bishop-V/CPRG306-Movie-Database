@@ -1,3 +1,5 @@
+//General layout for all pages, using the NavBar and Footer from components to wrap each page.
+// {children} is wrapped with a background color to avoid redundancy.
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";

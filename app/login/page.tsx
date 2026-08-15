@@ -1,3 +1,7 @@
+//User login page.
+//This page has a link for a user to click which will take them to the Register page where they may create a new account.
+//Users may login on this page via an email and password. Login is handled via Supabase.
+
 "use client";
 
 import { useRouter } from "next/navigation";

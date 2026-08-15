@@ -1,7 +1,9 @@
 // ============================================================================
 // components/Navbar.tsx   →   the bar across the top of every page
 // ============================================================================
-// Displays page title and links
+// Displays page title and links.
+// This page checks whether a user is logged in, and if they are it will display the Add Movie page in the NavBar.
+// Additionally, the log in button will be changed to a log out button which will log out the user via Supabase.
 // ----------------------------------------------------------------------------
 "use client";
 import Link from "next/link";
