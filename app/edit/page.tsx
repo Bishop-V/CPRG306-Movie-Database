@@ -1,5 +1,7 @@
 /*Server side edit movie page. Redirects the user if they are not logged in to the login page.
  * Interacts with supabase to change the current movie.
+ * server component that communicates with supabase to check log in status and grab movie details
+ * movie id (title) is passed to this page via url search params
  * Grabs information about the movie to use as the default form values, which are passed to the EditMovieForm component.
  *
  */

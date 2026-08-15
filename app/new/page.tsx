@@ -2,6 +2,7 @@
  * Add movie page.
  * This page returns the user to the login page if they are
  * not logged in.
+ * server component that uses the MovieForm component to add movies to the database.
  * Returns MovieForm to add movies through the component.
  */
 
